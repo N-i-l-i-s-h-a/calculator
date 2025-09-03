@@ -10,7 +10,7 @@ function operate(){
             console.log(`a + b = ${sum}`)
             break;
         case '-':
-            const diff = Math.abs(op1 - op2);
+            const diff = op1 - op2;
             console.log(`a - b = ${diff}`)
             break;
         case 'x':
