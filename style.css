@@ -1,0 +1,5 @@
+body {
+  background-image: radial-gradient(circle, #38a5ff 1px, transparent 1px); /*Creating a simple dot pattern with radial gradients*/
+  background-size: 10px 10px; /* Controls the spacing between dots */
+  background-color: #b0dbff; /* Fallback background color */
+}
