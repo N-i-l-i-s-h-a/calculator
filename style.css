@@ -1,5 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 body {
-  background-image: radial-gradient(circle, #38a5ff 1px, transparent 1px); /*Creating a simple dot pattern with radial gradients*/
+  background-image: radial-gradient(circle, #3859ff9e 1px, transparent 0px); /*Creating a simple dot pattern with radial gradients*/
   background-size: 10px 10px; /* Controls the spacing between dots */
   background-color: #b0dbff; /* Fallback background color */
+}
+.calci-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.calci{
+  height: 70vh;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 3%;
+  box-shadow: 15px 15px #00000090;
+}
+.row{
+  display: flex;
 }
