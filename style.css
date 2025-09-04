@@ -17,6 +17,10 @@ button{
   font-size: larger;
   background-color: #CCEFFE;
 }
+button:hover{
+  transform: scale3d(0.98,0.98,0.9);
+  cursor: pointer;
+}
 .calci-container{
   display: flex;
   justify-content: center;
