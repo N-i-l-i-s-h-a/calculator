@@ -6,4 +6,4 @@ for(const btn of button){
         calc_dis.innerText += (event.target).innerText;
         calc_dis.classList.add('emphasized');
     });
-} 
+}
