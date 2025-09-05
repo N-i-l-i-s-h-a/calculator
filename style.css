@@ -43,9 +43,9 @@ button:hover{
   box-shadow: 15px 15px #00000090;
 }
 .display{
-  overflow: hidden;
-  width: 260px;
-  height: 100px;
+  width: 228px;
+  height: 68px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -55,8 +55,10 @@ button:hover{
   border-radius: 5px;
 }
 #operation{
-  padding: 16px;
-  transform: scale(1.5);
+  overflow: clip;
+  width: 228px;
+  display: flex;
+  justify-content: flex-end;
   color: rgb(103, 15, 15);
   font-weight: 800;
   font-size: xx-large;
