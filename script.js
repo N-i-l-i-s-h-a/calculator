@@ -26,14 +26,16 @@ for(const btn of arithBtn){
             calc_dis.innerText += operation;
             opPresent = true;
         }
-        else{
-            compute();
+        else if(btn.innerText != operation){
+            computeInCalc();
+            calc_dis.innerText += operation;
         }
     })
 }
 
 function clearAll(){
     calc_dis.innerText = "";
+    res_dis.innerText = "";
 }
 
 function changeSign(){
