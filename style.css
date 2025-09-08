@@ -33,11 +33,12 @@ button:hover{
   height: 400px;
   width: 290px;
   padding-top: 16px;
+  padding-bottom: 16px;
   background-color: #FE9CCB;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 16px;
+  gap: 24px;
   align-items: center;
   border: black;
   border-style: double;
@@ -46,11 +47,11 @@ button:hover{
 }
 .display{
   width: 228px;
-  height: 68px;
-  padding: 16px;
+  height: 84px;
+  padding: 8px 16px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  gap: 5px;
   border:black;
   border-style: double;
   background-color: #CCEFFE;
@@ -63,7 +64,17 @@ button:hover{
   justify-content: flex-end;
   color: rgb(103, 15, 15);
   font-weight: 800;
-  font-size: xx-large;
+  font-size: 40px;
+}
+#result{
+  overflow: clip;
+  width: 228px;
+  height: 52px;
+  display: flex;
+  justify-content: flex-end;
+  color: rgb(103, 15, 15);
+  font-weight: 800;
+  font-size: 45px;
 }
 .keys{
   width: 260px;

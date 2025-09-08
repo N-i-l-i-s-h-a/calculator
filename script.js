@@ -36,6 +36,8 @@ for(const btn of arithBtn){
 function clearAll(){
     calc_dis.innerText = "";
     res_dis.innerText = "";
+    calc_dis.style.fontSize = '40px';
+    opPresent = false;
 }
 
 function changeSign(){
@@ -53,6 +55,7 @@ function backspace(){
 
 function compute(){
     const expression = calc_dis.innerText;
+    calc_dis.style.fontSize = '20px';
     switch (operation) {
         case '+':
             operand2 = expression.slice(expression.indexOf('+') + 1);
