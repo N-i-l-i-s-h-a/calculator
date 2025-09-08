@@ -6,7 +6,6 @@ const calc_dis = document.querySelector("#operation");
 let operand1;
 let operand2;
 let operation;
-let opPresent = false;
 
 /*numerical button -> eventListener that displays the number*/
 const disBtn = document.querySelectorAll('.dis');
@@ -19,15 +18,17 @@ for(const btn of disBtn){
 /*arithmetic button -> eventListener that initializes operand1*/
 const arithBtn = document.querySelectorAll('#arith');
 for(const btn of arithBtn){
+    operation = btn.innerText;
     btn.addEventListener('click', function(event){
-        if(!opPresent){
+        if(res_dis.innerText === ''){
             operand1 = calc_dis.innerText;
-            operation = btn.innerText;
             calc_dis.innerText += operation;
-            opPresent = true;
         }
-        else if(btn.innerText != operation){
-            computeInCalc();
+        else{
+            operand1 = res_dis.innerText;
+            calc_dis.style.fontSize = '40px';
+            calc_dis.innerText = operand1;
+            res_dis.innerText = "";
             calc_dis.innerText += operation;
         }
     })
@@ -37,7 +38,6 @@ function clearAll(){
     calc_dis.innerText = "";
     res_dis.innerText = "";
     calc_dis.style.fontSize = '40px';
-    opPresent = false;
 }
 
 function changeSign(){
@@ -55,11 +55,13 @@ function backspace(){
 
 function compute(){
     const expression = calc_dis.innerText;
+    console.log(`${expression}`);
     calc_dis.style.fontSize = '20px';
     switch (operation) {
         case '+':
             operand2 = expression.slice(expression.indexOf('+') + 1);
             res_dis.innerText = Number(operand1) + Number(operand2);
+            return res_dis;
             break;
         case '-':
             operand2 = expression.slice(expression.indexOf('-') + 1);
