@@ -17,11 +17,7 @@ for(const btn of numBtn){
         }
         else{
             calc_dis.innerText += (event.target).innerText;
-            const displayContainer = calc_dis.parentElement;
-            if (calc_dis.scrollWidth >= displayContainer.clientWidth) {
-                const number = parseFloat(calc_dis.innerText);
-                calc_dis.innerText = number.toExponential(4);
-            }
+            handleOverflow(calc_dis);
         }
     });
 }
@@ -51,7 +47,16 @@ for (const btn of arithBtn) {
             calc_dis.innerText += clickedOperator;
             operation = clickedOperator;  
         }
+        handleOverflow(calc_dis);
     });
+}
+
+function handleOverflow(activeScreen){
+    const displayContainer = activeScreen.parentElement;
+    if (activeScreen.scrollWidth >= displayContainer.clientWidth) {
+        const number = parseFloat(activeScreen.innerText);
+        activeScreen.innerText = number.toExponential(2);
+    }
 }
 
 function hasOperator(textToCheck) {
@@ -165,23 +170,27 @@ function compute(){
         case '+':
             operand2 = expression.slice(expression.indexOf('+') + 1);
             res_dis.innerText = Number(operand1) + Number(operand2);
-            return res_dis;
+            handleOverflow(res_dis);
             break;
         case '-':
             operand2 = expression.slice(expression.indexOf('-') + 1);
             res_dis.innerText = Number(operand1) - Number(operand2);
+            handleOverflow(res_dis);
             break;
         case '÷':
             operand2 = expression.slice(expression.indexOf('÷') + 1);
             if (Number(operand2) === 0) {
                 res_dis.innerText = "Error";
-            } else {
+            } 
+            else {
                 res_dis.innerText = Number(operand1) / Number(operand2);
             }
+            handleOverflow(res_dis);
             break;
         case 'x':
             operand2 = expression.slice(expression.indexOf('x') + 1);
             res_dis.innerText = Number(operand1) * Number(operand2);
+            handleOverflow(res_dis);
             break;
         default:
             break;
