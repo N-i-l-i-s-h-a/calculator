@@ -17,6 +17,11 @@ for(const btn of numBtn){
         }
         else{
             calc_dis.innerText += (event.target).innerText;
+            const displayContainer = calc_dis.parentElement;
+            if (calc_dis.scrollWidth >= displayContainer.clientWidth) {
+                const number = parseFloat(calc_dis.innerText);
+                calc_dis.innerText = number.toExponential(4);
+            }
         }
     });
 }
@@ -50,11 +55,25 @@ for (const btn of arithBtn) {
 }
 
 function hasOperator(textToCheck) {
-    if (textToCheck.includes('+') || textToCheck.includes('x') || textToCheck.includes('÷')) {
+    // 1. First, check for the unambiguous operators 'x' and '÷'.
+    if (textToCheck.includes('x') || textToCheck.includes('÷')) {
         return true;
     }
-    if (textToCheck.indexOf('-') > 0) {
-        return true;
+
+    // 2. Check for the '+' operator, but only if it's NOT part of scientific notation.
+    const plusIndex = textToCheck.indexOf('+');
+    if (plusIndex > -1) { 
+        if (textToCheck[plusIndex - 1]?.toLowerCase() !== 'e') {
+            return true;
+        }
+    }
+
+    // 3. Check for the '-' operator, handling both negative numbers and scientific notation.
+    const minusIndex = textToCheck.indexOf('-');
+    if (minusIndex > 0) { 
+        if (textToCheck[minusIndex - 1]?.toLowerCase() !== 'e') {
+            return true; 
+        }
     }
     return false;
 }
