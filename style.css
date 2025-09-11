@@ -46,6 +46,7 @@ button:hover{
   box-shadow: 15px 15px #00000090;
 }
 .display{
+  overflow: hidden;
   width: 228px;
   height: 84px;
   padding: 8px 16px;
@@ -58,21 +59,21 @@ button:hover{
   border-radius: 5px;
 }
 #operation{
-  width: 100%;
+  width: 222px;
   text-align: right;
   color: rgb(103, 15, 15);
   font-weight: 800;
   font-size: 40px;
-  text-overflow: ellipsis;
+  text-overflow: clip;
 }
 #result{
-  width: 100%;
+  width: 222px;
   height: 52px;
   text-align: right;
   color: rgb(103, 15, 15);
   font-weight: 800;
   font-size: 45px;
-  text-overflow: ellipsis;
+  text-overflow: clip;
 }
 .keys{
   width: 260px;

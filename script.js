@@ -164,7 +164,8 @@ function resetDisWithRes(){
 
 function compute(){
     const expression = calc_dis.innerText;
-    console.log(`${expression}`);
+    if(!hasOperator(expression))
+        return;
     calc_dis.style.fontSize = '20px';
     switch (operation) {
         case '+':
