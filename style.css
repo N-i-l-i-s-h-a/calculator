@@ -18,6 +18,7 @@ button{
   border-radius: 5px;
   color: rgb(103, 15, 15);
   background-color: #CCEFFE;
+  box-shadow: 1px 1px rgb(176, 29, 53);
 }
 button:hover{
   transform: scale3d(0.98,0.98,0.9);
@@ -57,6 +58,7 @@ button:hover{
   border-style: double;
   background-color: #CCEFFE;
   border-radius: 5px;
+  box-shadow: 1px 1px rgb(176, 29, 53);
 }
 #operation{
   width: 222px;
