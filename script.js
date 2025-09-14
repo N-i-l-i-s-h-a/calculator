@@ -115,8 +115,22 @@ function changeSign(){
 function evalPercentage(){
     if(res_dis.innerText != ''){
         resetDisWithRes();
+        calc_dis.innerText = Number(calc_dis.innerText) / 100;
     }
-    calc_dis.innerText = Number(calc_dis.innerText) / 100;
+    else if(hasOperator(calc_dis.innerText)){
+        operation = findOperator(calc_dis.innerText);
+        let string = calc_dis.innerText;
+        if(string[string.length - 1] === operation){
+            return;
+        }
+        else{
+            compute();
+            evalPercentage();
+        }
+    }
+    else{
+     calc_dis.innerText = Number(calc_dis.innerText) / 100;
+    }
 }
 
 function backspace(){
