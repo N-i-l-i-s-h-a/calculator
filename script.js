@@ -43,9 +43,11 @@ for (const btn of arithBtn) {
             operation = clickedOperator;
         } 
         else {
-            operand1 = calc_dis.innerText; 
-            calc_dis.innerText += clickedOperator;
-            operation = clickedOperator;  
+            if(calc_dis.innerText !== ""){
+                operand1 = calc_dis.innerText; 
+                calc_dis.innerText += clickedOperator;
+                operation = clickedOperator;
+            }  
         }
         handleOverflow(calc_dis);
     });

@@ -98,3 +98,20 @@ button:hover{
   background-size: 35px;
   background-position: center;
 }
+footer{
+    font-size: 13px;
+    color: #3859ffc8;
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    bottom: 0;
+    background-color: #CCEFFE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+  font-size: 13px;
+  text-decoration: none;
+  color: #3859ffc8;
+}
